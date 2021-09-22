@@ -1,5 +1,5 @@
 export const constants = {
-  ESC: "\x1b[",
+  ESC: "\x1b",
   BEL: "\x07",
   BS: "\x08",
   HT: "\x09",
