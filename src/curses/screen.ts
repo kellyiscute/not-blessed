@@ -1,23 +1,34 @@
 import tty from "tty";
 import { constants } from "./constants";
 
-export function clear(stdout: tty.WriteStream) {
-  stdout.write(constants.ESC + "[2J");
-}
 
-export function clearFromCur(stdout: tty.WriteStream) {
-  stdout.write(constants.ESC + "[0J");
-}
+export class Screen {
+  stdin: tty.ReadStream;
+  stdout: tty.WriteStream;
 
-export function clearToBeginningOfScr(stdout: tty.WriteStream) {
-  stdout.write(constants.ESC + "[1J");
-}
+  constructor(stdin: tty.ReadStream, stdout: tty.WriteStream) {
+    this.stdout = stdout;
+    this.stdin = stdin;
+  }
 
-export function clearLine(stdout: tty.WriteStream) {
-  stdout.write(constants.ESC + "[K");
-}
+  clear() {
+    this.stdout.write(constants.ESC + "[2J");
+  }
 
-export function clearToBeginningOfLine(stdout: tty.WriteStream) {
-  stdout.write(constants.ESC + "[0K")
+  clearFromCur() {
+    this.stdout.write(constants.ESC + "[0J");
+  }
+
+  clearToBeginningOfScr() {
+    this.stdout.write(constants.ESC + "[1J");
+  }
+
+  clearLine() {
+    this.stdout.write(constants.ESC + "[K");
+  }
+
+  clearToBeginningOfLine() {
+    this.stdout.write(constants.ESC + "[0K");
+  }
 }
 

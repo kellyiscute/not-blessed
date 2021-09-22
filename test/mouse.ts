@@ -1,4 +1,3 @@
-import { EventEmitter } from "stream";
 import tty from "tty";
 import { Parser } from "../src/curses";
 import { Mouse } from "../src/curses/mouse";
@@ -20,3 +19,4 @@ r.on("data", (d) => {
     process.exit();
   }
 });
+

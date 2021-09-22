@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc -p . --outDir build/",
-    "test": "yarn tsc && node build/test/index.js"
+    "test:m": "yarn tsc && node build/test/mouse.js",
+    "test:kb": "yarn tsc && node build/test/keyboard.js"
   },
   "author": "Kelly",
   "license": "MIT",
