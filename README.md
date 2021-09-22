@@ -4,15 +4,15 @@ Another maintained TUI framework for node application that provides from low lev
 
 ## ROADMAP
   ### LOW LEVEL APIS
-  [x] Mouse events
-  [ ] Keyboard
-  [x] Screen control
-  [x] Cursor control
-  [ ] Higher level screen buffer
-  [ ] Reginal Update
-  [ ] Window mixer
+  - [x] Mouse events
+  - [ ] Keyboard
+  - [x] Screen control
+  - [x] Cursor control
+  - [ ] Higher level screen buffer
+  - [ ] Reginal Update
+  - [ ] Window mixer
   ### HIGH LEVEL APIS
-  [ ] Widgets
-  [ ] Screens
-  [ ] Drag and drop
+  - [ ] Widgets
+  - [ ] Screens
+  - [ ] Drag and drop
   
