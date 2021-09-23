@@ -1,5 +1,5 @@
-import {Parser} from "../src/curses";
-import {Keyboard} from "../src/curses/keyboard";
+import { Parser } from "../src/curses";
+import { Keyboard } from "../src/curses/keyboard";
 import tty from "tty";
 
 const p = new Parser();
@@ -14,4 +14,3 @@ r.on("data", (data) => {
     process.exit();
   }
 });
-

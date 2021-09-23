@@ -14,7 +14,7 @@ export class Cursor {
   }
 
   moveTo(point: IPoint) {
-    this.stdout.write(constants.ESC + `[${point.y};${point.x}H`)
+    this.stdout.write(constants.ESC + `[${point.y};${point.x}H`);
   }
 
   moveUp(nLine: number) {
@@ -39,8 +39,7 @@ export class Cursor {
       stdin.once("data", (data) => {
         const r = /\x1b\[([0-9]*);([0-9]*)/.exec(data.toString("utf8"));
         resolve({ x: Number.parseInt(r![1]), y: Number.parseInt(r![2]) });
-      })
-    })
+      });
+    });
   }
 }
-

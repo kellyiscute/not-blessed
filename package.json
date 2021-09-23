@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc -p . --outDir build/",
+    "prettier": "prettier --write .",
     "test:m": "yarn tsc && node build/test/mouse.js",
     "test:kb": "yarn tsc && node build/test/keyboard.js"
   },

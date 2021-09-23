@@ -9,5 +9,3 @@ export function isCSI(buffer: Buffer): boolean {
 export function isSS3(buffer: Buffer): boolean {
   return isEscape(buffer) && buffer[1] === 0x4f;
 }
-
-

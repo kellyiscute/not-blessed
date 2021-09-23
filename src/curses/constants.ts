@@ -10,4 +10,3 @@ export const constants = {
   DEL: "\x7F",
   ETX: "\x03",
 };
-

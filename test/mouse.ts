@@ -19,4 +19,3 @@ r.on("data", (d) => {
     process.exit();
   }
 });
-

@@ -1,7 +1,6 @@
 import tty from "tty";
 import { constants } from "./constants";
 
-
 export class Screen {
   stdin: tty.ReadStream;
   stdout: tty.WriteStream;
@@ -31,4 +30,3 @@ export class Screen {
     this.stdout.write(constants.ESC + "[0K");
   }
 }
-

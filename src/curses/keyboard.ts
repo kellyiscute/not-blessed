@@ -32,10 +32,13 @@ export class Keyboard extends EventEmitter {
         R: "F3",
         S: "F4",
       };
-      this.emit("key", SS3_KEYS[String.fromCharCode(data[2])] ?? "Unknown Function Key");
+      this.emit(
+        "key",
+        SS3_KEYS[String.fromCharCode(data[2])] ?? "Unknown Function Key"
+      );
     } else if (isCSI(data)) {
       if (data[2] === 0x31) {
-        const CSI_1_KEYS: {[k: string]: string} = {
+        const CSI_1_KEYS: { [k: string]: string } = {
           0x35: "F5",
           0x37: "F6",
           0x38: "F7",
@@ -49,7 +52,7 @@ export class Keyboard extends EventEmitter {
           0x31: "F10",
           0x33: "F11",
           0x34: "F12",
-        }
+        };
         this.emit("key", CSI_2_KEYS[data[3]!] ?? "Unknown Function Key");
       } else {
         const CSI_SINGLE_KEYS: { [key: number]: String } = {
@@ -67,5 +70,4 @@ export class Keyboard extends EventEmitter {
       }
     }
   }
-
 }
