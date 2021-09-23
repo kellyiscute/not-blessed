@@ -6,6 +6,7 @@ import {
   generateColorEscape,
   generateTextStyleEscape,
 } from "../../curses/helper";
+import assert from "assert";
 
 export class StyledRenderSpan extends RenderSpan {
   style: IRenderStyle;
@@ -42,13 +43,37 @@ export class StyledRenderSpan extends RenderSpan {
   }
 
   get renderString() {
-    return this.getEscapeSeqs().join(this.text);
+    if (this.children) {
+      return this.getEscapeSeqs().join(
+        this.children.map((s) => s.renderString).join("")
+      );
+    } else {
+      return this.getEscapeSeqs().join(this.text);
+    }
   }
 
-  coveredBy(span: RenderSpan, offset?: number) {
+  /**
+   * appliedOffset can be negative
+   */
+  coveredBy(span: RenderSpan, appliedOffset?: number) {
     if (span.type === "transparent") return this;
-    if (typeof offset === "undefined") {
-      offset = 0;
+    if (typeof appliedOffset === "undefined") {
+      appliedOffset = 0;
+    }
+
+    if (!this.isLeaf) {
+      const children: RenderSpan[] = [];
+      let totalWidthChecked = 0;
+      assert(this.children, "Illegal RenderSpan");
+
+      for (let i = 0; i < this.children.length; i++) {
+        if (totalWidthChecked + this.children[i].width > appliedOffset) {
+          totalWidthChecked += this.children[i].width;
+          children.push(this.children[i]);
+          continue;
+        } else {
+        }
+      }
     }
   }
 }
