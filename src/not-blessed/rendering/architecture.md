@@ -33,7 +33,8 @@
     * `renderString` getter contains the actual data that sends to the terminal(control sequences && content)
     * `width` field indicates the actual content length
     * `type`: `normal` | `styled` | `blankSpace` | `transparent`
-    * implements a combime function that combime with another Render Span
+    * Can either contain text or child spans
+    * implements a combime(`coveredBy`) function that combime with another Render Span
 
 ## Styled Span `render-styled-span.ts`
 

@@ -1,4 +1,4 @@
-import { IPoint } from "../../typing/point";
+import { IPoint } from "../typing/point";
 
 export interface IRect {
   topLeft: IPoint;
@@ -17,14 +17,7 @@ export class Rect implements IRect {
   width: number;
   height: number;
 
-  constructor({
-    topLeft,
-    topRight,
-    bottomRight,
-    bottomLeft,
-    width,
-    height,
-  }: IRect) {
+  constructor({ topLeft, topRight, bottomRight, bottomLeft, width, height }: IRect) {
     this.topRight = topRight;
     this.topLeft = topLeft;
     this.bottomRight = bottomRight;
@@ -33,13 +26,7 @@ export class Rect implements IRect {
     this.height = height;
   }
 
-  static fromPoints({
-    topLeft,
-    bottomRight,
-  }: {
-    topLeft: IPoint;
-    bottomRight: IPoint;
-  }): Rect {
+  static fromPoints({ topLeft, bottomRight }: { topLeft: IPoint; bottomRight: IPoint }): Rect {
     return new Rect({
       topLeft: { ...topLeft },
       bottomRight: { ...bottomRight },
@@ -50,15 +37,7 @@ export class Rect implements IRect {
     });
   }
 
-  static fromTLWH({
-    topLeft,
-    width,
-    height,
-  }: {
-    topLeft: IPoint;
-    width: number;
-    height: number;
-  }) {
+  static fromTLWH({ topLeft, width, height }: { topLeft: IPoint; width: number; height: number }) {
     return new Rect({
       width,
       height,

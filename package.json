@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/node": "^16.9.4",
+    "east-asian-width": "^0.1.1",
     "typescript": "^4.4.3"
   }
 }

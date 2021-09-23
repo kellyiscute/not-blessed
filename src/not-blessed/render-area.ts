@@ -1,5 +1,5 @@
-import { IPoint } from "../../typing/point";
-import { ISize } from "../../typing/size";
+import { IPoint } from "../typing/point";
+import { ISize } from "../typing/size";
 
 export class RenderArea {
   // if size not set, expands
