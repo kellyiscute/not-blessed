@@ -11,7 +11,7 @@ export class RenderArea {
   // render position relative to parent
   // top left corner if not set
   position?: IPoint;
-  child?: RenderArea;
+  children?: RenderArea[];
 
   get hasSize() {
     return typeof this.size !== "undefined";

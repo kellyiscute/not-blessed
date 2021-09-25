@@ -3,6 +3,7 @@ import { constants } from "../../curses/constants";
 import eaw from "east-asian-width";
 import assert from "assert";
 import { StyledRenderSpan } from "./styled-render-span";
+import { IRenderStyle } from "../../typing/render-style";
 
 export type IRenderSpanType =
   | "blankSpace"
@@ -71,6 +72,10 @@ export class RenderSpan {
 
   static blankSpace(width: number) {
     return new RenderSpan("blankSpace", width);
+  }
+
+  static styled(data: string, style: IRenderStyle) {
+    return new StyledRenderSpan(data, style);
   }
 
   strip(offset: number, side: "left" | "right"): RenderSpan {
