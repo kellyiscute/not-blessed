@@ -1,6 +1,6 @@
 import EventEmitter from "events";
-import { IPoint } from "../../typing/point";
-import { ISize } from "../../typing/size";
+import { IPoint } from "../../typings/point";
+import { ISize } from "../../typings/size";
 import { RenderSpan } from "./render-span";
 
 export class RenderPanel extends EventEmitter {

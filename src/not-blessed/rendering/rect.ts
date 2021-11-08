@@ -1,4 +1,4 @@
-import { IPoint } from "../typing/point";
+import { IPoint } from "../../typings/point"
 
 export interface IRect {
   topLeft: IPoint;

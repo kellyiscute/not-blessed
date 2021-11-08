@@ -1,4 +1,4 @@
-import { IRenderStyle } from "../../typing/render-style";
+import { IRenderStyle } from "../../typings/render-style";
 import { RenderSpan } from "./render-span";
 // @ts-ignore
 import eaw from "east-asian-width";

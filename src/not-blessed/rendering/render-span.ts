@@ -3,7 +3,7 @@ import { constants } from "../../curses/constants";
 import eaw from "east-asian-width";
 import assert from "assert";
 import { StyledRenderSpan } from "./styled-render-span";
-import { IRenderStyle } from "../../typing/render-style";
+import { IRenderStyle } from "../../typings/render-style";
 
 export type IRenderSpanType =
   | "blankSpace"

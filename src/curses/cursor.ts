@@ -1,5 +1,5 @@
 import tty from "tty";
-import { IPoint } from "../typing/point";
+import { IPoint } from "../typings/point";
 import { constants } from "./constants";
 
 export class Cursor {

@@ -1,4 +1,4 @@
-import { ITermTextStyle } from "../typing/render-style";
+import { ITermTextStyle } from "../typings/render-style";
 
 export function isEscape(buffer: Buffer): boolean {
   return buffer[0] === 0x1b;
